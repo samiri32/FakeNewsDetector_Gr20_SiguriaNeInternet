@@ -12,7 +12,6 @@ def fillDF(_vertetesia, dataFrame):
                 i=i+1
                 pass
         except:  
-            print(i);
             i=i+1;
             file.close()
     return dataFrame
@@ -23,4 +22,4 @@ dataFrame = pd.DataFrame(data, columns =['lajmi', 'vertetesia'])
 dataFrame = fillDF("true", dataFrame)
 dataFrame = fillDF("fake", dataFrame)
 dataFrame = dataFrame.sample(frac=1)
-dataFrame.to_csv('CSV_news.csv', index=False, mode='a')
+dataFrame.to_csv('CSV_news.csv', index=False, mode='w')
