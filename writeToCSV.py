@@ -6,7 +6,7 @@ def fillDF(_vertetesia, dataFrame):
         try:
             with open ("full_texts/{vertetesia}/{numri}.txt".format(vertetesia=_vertetesia, numri=i), 'r', encoding='utf-8') as file:
                 var = file.read()
-                fake = 1 if _vertetesia=="fake" else 0
+                fake = 0 if _vertetesia=="fake" else 1
                 dictionary = {'lajmi': var, 'vertetesia': fake}
                 dataFrame = dataFrame.append(dictionary, ignore_index=True)
                 i=i+1
