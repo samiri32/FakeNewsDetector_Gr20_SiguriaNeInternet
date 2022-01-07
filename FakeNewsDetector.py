@@ -12,14 +12,29 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 import stopwords as sp
 
-def textPreProcessing(content):
-    stemmed_content = re.sub('ç','c',content)
-    stemmed_content = re.sub('[^a-zA-Z]',' ',stemmed_content)
+def textPreProcessing(permbajtja):
+    stemmed_content = re.sub('ç','c', permbajtja)
+    stemmed_content = re.sub('[^a-zA-Z]',' ', stemmed_content)
     stemmed_content = stemmed_content.lower()
     stemmed_content = stemmed_content.split()
     [stemmed_content for word in stemmed_content if not word in sp.STOP_WORDS]
     stemmed_content = ' '.join(stemmed_content)
     return stemmed_content
+
+def print_prediction(vertetesia):
+    if vertetesia == 1:
+        return "Lajmi është i vërtetë"
+    elif vertetesia == 0:
+        return "Lajmi nuk është i vërtetë"
+
+def manual_testing(lajmi):
+    testing_news = {"teksti":[lajmi]}
+    new_def_test = pd.DataFrame(testing_news)
+    new_def_test["teksti"] = new_def_test["teksti"].apply(textPreProcessing) 
+    new_x_test = new_def_test["teksti"]
+    new_xv_test = vectorizer.transform(new_x_test)
+    predikimi = model.predict(new_xv_test)
+    return print(print_prediction(predikimi[0]))
 
 dataFrame = pd.read_csv('CSV_news.csv')
 dataFrame['lajmi'] = dataFrame['lajmi'].apply(textPreProcessing)
