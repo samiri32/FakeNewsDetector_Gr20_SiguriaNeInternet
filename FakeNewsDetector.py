@@ -48,7 +48,7 @@ vectorizer.fit(lajmi_values)
 
 lajmi_values = vectorizer.transform(lajmi_values)
 
-lajmi_train, lajmi_test, vertetesia_train, vertetesia_test = train_test_split(lajmi_values, vertetesia_values, test_size = 0.3, stratify=vertetesia_values, random_state=2)
+lajmi_train, lajmi_test, vertetesia_train, vertetesia_test = train_test_split(lajmi_values, vertetesia_values, test_size = 0.1, stratify=vertetesia_values, random_state=2)
 model = LogisticRegression()
 
 model.fit(lajmi_train, vertetesia_train)
