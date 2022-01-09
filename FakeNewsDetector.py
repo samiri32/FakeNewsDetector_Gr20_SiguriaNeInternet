@@ -12,6 +12,8 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 import stopwords as sp
 
+
+
 def textPreProcessing(permbajtja):
     stemmed_content = re.sub('ç','c', permbajtja)
     stemmed_content = re.sub('[^a-zA-Z]',' ', stemmed_content)
@@ -73,6 +75,8 @@ test_data_accuracy = accuracy_score(lajmi_test_prediction, vertetesia_test)
 
 print('Saktesia e te dhenave testuese : ', test_data_accuracy)
 
+permbajtja=input();
 
 
+print(print_prediction(manual_testing(permbajtja)))
 
