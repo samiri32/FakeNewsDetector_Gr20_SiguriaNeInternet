@@ -14,9 +14,9 @@
 
 #### Profesorët: PhD.c Mërgim H. HOTI, Prof. Dr. Blerim REXHA
 
-#### Studentët: Enes Hasani, Samir Simnica
+#### Studentët: Arlind BYTYQI, Enes HASANI, Marigona MORINA, Samir SIMNICA
 
-#### Grupi i projektit: 7 && 10
+#### Grupi i projektit: 20
 
 ##### Prishtinë, janar 2022
 
