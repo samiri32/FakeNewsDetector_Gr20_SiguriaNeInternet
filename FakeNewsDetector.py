@@ -34,7 +34,7 @@ def manual_testing(lajmi):
     new_x_test = new_def_test["teksti"]
     new_xv_test = vectorizer.transform(new_x_test)
     predikimi = model.predict(new_xv_test)
-    return print(print_prediction(predikimi[0]))
+    return predikimi[0]
 
 dataFrame = pd.read_csv('CSV_news.csv')
 dataFrame['lajmi'] = dataFrame['lajmi'].apply(textPreProcessing)
@@ -62,4 +62,15 @@ lajmi_test_prediction = model.predict(lajmi_test)
 test_data_accuracy = accuracy_score(lajmi_test_prediction, vertetesia_test)
 
 print('Saktesia e te dhenave testuese : ', test_data_accuracy)
+
+def count_true_predictions():
+    dataFrame = pd.read_csv("ScrapAndWriteToCSV.csv")
+    count=0
+    for i in range(0,dataFrame.shape[0]):
+        if manual_testing(dataFrame['lajmi'][i]): count += 1 
+    return count,dataFrame.shape[0]
+
+def find_accuarcy_manually():
+    return count_true_predictions()[0]/count_true_predictions()[1] #numri i krejt lajmeve t verteta  
+
 
