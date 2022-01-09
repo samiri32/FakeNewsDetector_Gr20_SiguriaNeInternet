@@ -1,1 +1,28 @@
-# FakeNewsDetector-SiguriaNeInternet
+# Fake News Detector
+
+### Universiteti i Prishtinës
+
+### Fakulteti i Inxhinierisë Elektrike dhe Kompjuterike
+
+#### Drejtimi: Inxhinieri Kompjuterike
+
+#### Viti: III
+
+#### Semestri: V
+
+#### Lenda: Siguria në Internet
+
+#### Profesorët: PhD.c Mërgim H. HOTI, Prof. Dr. Blerim REXHA
+
+#### Studentët: Arlind BYTYQI, Enes HASANI, Marigona MORINA, Samir SIMNICA
+
+#### Grupi i projektit: 20
+
+##### Prishtinë, janar 2022
+
+## Pershkrimi i projektit
+#### Ky "Fake News Detector" detekton lajmet e rreme ne gjuhen shqipe. Aplikacioni eshte shkruar ne gjuhen programuese Python dhe bazohet ne nje dataset ku jane ndare lajmet e rreme dhe te verteta ne portalet shqiptare gjate viteve te fundit, dataset perbehet prej perafersisht 2000 lajmeve te rreme dhe 2000 te verteta, te ndare nje lajm per fajll. Skripta "WriteTOCSV.py" i lexon lajmet neper keto fajlla dhe i shkruan ne fajllin "CSV_news.csv". Në skriptën "stopwords.py" gjenden fjalët e ndaluara të cilat përdoren nga skripta "FakeNewsDetector.py" për para-procesim të tekstit. Skripta "scrapAndCSVwrite.py" sahere që ekezekutohet merr lajme nga faqja "kallxo.com" dhe i shkruan në fajllin "ScrapAndWriteToCSV.csv". "FakeNewsDetector" është skripta kryesore e cila përmbanë modelin matematikorë për detektimin e lajmeve të rreme, pas ekzekutimit automatikisht testohet saktesia e modelit me disa lajme nga fajlli "CSV_news.csv", por ka edhe funksionin manual_testing(lajme) i cili mund të përdoret për predikim të vërtetsisë të cilit do lajm.
+
+## Referencat:
+#### https://github.com/rexshijaku/alb-fake-news-corpus
+#### https://github.com/explosion/spaCy/blob/master/spacy/lang/sq/stop_words.py?fbclid=IwAR11jfEbSSW6raQ18TaFgB5ifmbhgvKh9zx9Xp4mYayuE78F9svT2WtKEoA
